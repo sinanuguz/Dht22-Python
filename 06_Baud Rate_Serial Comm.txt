@@ -1,0 +1,62 @@
+## BAUD NEDİR ?
+
+Baud/Baud rate, uzak iletişim ve elektronikte kullanılıp, 
+saniyedeki değişim oranını veren ve "Bd" ile gösterilen birimdir. 
+
+Bir örnek vermek gerekirse: 
+
+1 kBd = 1,000 Bd, saniyedeki 1,000 sembol oranı ile eşit olur. 
+Sayısal sistemlerde kullanılan ikili kodlar 1 Bd = 1 bit/s'dir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#############################################################################
+https://pyserial.readthedocs.io/en/latest/shortintro.html
+
+## PYSERIAL KÜTÜPHANESİ ÖZETİ:
+
+>>> import serial
+
+>>> ser = serial.Serial()
+>>> ser.baudrate = 19200
+>>> ser.port = 'COM1'
+>>> ser
+Serial<id=0xa81c10, open=False>(port='COM1', baudrate=19200, bytesize=8, parity='N', stopbits=1, timeout=None, xonxoff=0, rtscts=0)
+
+>>> ser.open()
+>>> ser.is_open
+True
+
+>>> ser.close()
+>>> ser.is_open
+False
+
+
+>>> with serial.Serial('COM1', 9600, timeout=1) as ser:
+...     x = ser.read()          # bir byte oku
+...     s = ser.read(10)        # (timeout değerine bağlı olarak) on byte'a kadar oku
+...     line = ser.readline()   # '\n' değeri gelene kadar ok (dikkatli kullanılmalıdır !!!)
+
+
+
+
+
